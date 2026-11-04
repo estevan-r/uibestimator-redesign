@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,30 +20,93 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
     <header>
       <nav class="navbar fixed-top bg-body-tertiary border-bottom">
         <div class="container">
           <!-- Logo -->
           <a class="navbar-brand" href="https://cdle.colorado.gov/" aria-label="CDLE"
-            ><img src="./assets/img/co_cdle_dept.png" alt="CDLE Logo" width="auto" height="40px"
+            ><img src="./assets/img/co_cdle_dept.png" alt="CDLE Logo" width="auto" height="36px"
           /></a>
           <!-- Date and time info -->
           <span class="navbar-text text-muted">Date time info will go here</span>
         </div>
       </nav>
     </header>
-    <main></main>
-    <footer class="bg-body-tertiary fixed-bottom border-top py-3">
+    <main class="container p-0 flex-shrink-0 border-end border-start" style="text-wrap: pretty">
+      <!-- Hero -->
+      <div class="w-75 mt-5 mx-auto px-4 py-5 text-center">
+        <h1 class="fs-4xl fw-semibold fg-emphasis-inverse" style="text-wrap: balance">
+          Colorado Unemployment Insurance Benefits Estimator
+        </h1>
+        <p class="mt-3 fs-lg" style="text-wrap: balance">
+          Get an estimate of how much your Colorado Unemployment Insurance Benefits will be before you file a new
+          unemployment insurance claim.
+        </p>
+      </div>
+
+      <div class="px-4 py-5 border-top">
+        <div class="row row-cols-1 row-cols-lg-2 mx-auto gap-2">
+          <div class="col col-lg-5">
+            <h2>How Are Benefits Calculated?</h2>
+            <p>
+              We will examine the separation from your most recent employer and any other employer(s) that you worked
+              for during a predetermined 12-month period of time called the "base period." You must have earned at least
+              $2,500 in wages to receive unemployment insurance benefits.
+            </p>
+          </div>
+          <div class="col card rounded-3 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title">Calendar Quarters</h3>
+              <p class="card-text">A calendar quarter is equal to 3 month segments of the year beginning in January.</p>
+              <table class="table table-sm mb-0 mt-4">
+                <caption>
+                  Calendar Quarter Months
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">QTR 1</th>
+                    <th scope="col">QTR 2</th>
+                    <th scope="col">QTR 3</th>
+                    <th scope="col">QTR 4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">Jan</td>
+                    <td>Apr</td>
+                    <td>Jul</td>
+                    <td>Oct</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Feb</td>
+                    <td>May</td>
+                    <td>Aug</td>
+                    <td>Nov</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Mar</td>
+                    <td>Jun</td>
+                    <td>Sep</td>
+                    <td>Dec</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-body-tertiary mt-auto border-top py-3">
       <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
         <!-- Copyright / Left Side -->
-        <div class="mb-2 mb-md-0 text-muted d-flex align-items-center gap-2">
+        <div class="mb-2 mb-md-0 text-muted d-flex flex-column flex-md-row align-items-center gap-2">
           <img
             src="./assets/img/co_cdle_emblem_black.png"
             alt="CDLE Emblem"
             width="auto"
             height="24px"
-            style="opacity: 0.6"
+            class="opacity-75"
           />
           © 2026 CDLE UI Benefits Estimator 2.5.0.0
         </div>
