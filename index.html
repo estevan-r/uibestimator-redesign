@@ -49,6 +49,9 @@
       h2 {
         text-wrap: balance;
       }
+      p {
+        max-width: 75ch;
+      }
       .cell-non-base {
         --bs-table-bg-type: var(--bs-secondary-bg);
       }
@@ -61,14 +64,12 @@
   <body class="d-flex flex-column h-100">
     <!-- Start of Header -->
     <header>
-      <nav class="navbar fixed-top bg-body-tertiary border-bottom">
-        <div class="container">
-          <!-- Logo -->
-          <a class="navbar-brand" href="https://cdle.colorado.gov/" aria-label="CDLE"
-            ><img src="./assets/img/co_cdle_dept.png" alt="CDLE Logo" width="auto" height="36px"
-          /></a>
+      <nav class="navbar py-1 bg-primary">
+        <div class="container" style="font-size: 14px">
+          <!-- Message -->
+          <p class="navbar-text mb-0 text-white text-opacity-75">Alert or info message</p>
           <!-- Date and time info -->
-          <span class="navbar-text text-muted">Date time info will go here</span>
+          <span id="current-datetime" class="navbar-text text-white text-opacity-75">Date time info will go here</span>
         </div>
       </nav>
     </header>
@@ -76,14 +77,33 @@
     <!-- Start of Main Content -->
     <main class="container p-0 flex-shrink-0 border-end border-start" style="text-wrap: pretty">
       <!-- Hero Section -->
-      <div class="w-75 mt-5 mx-auto p-3 p-md-5 text-center">
-        <h1 class="fs-4xl fw-semibold fg-emphasis-inverse" style="text-wrap: balance">
-          Colorado Unemployment Insurance Benefits Estimator
-        </h1>
-        <p class="mt-3 fs-lg" style="text-wrap: balance">
-          Get an estimate of how much your Colorado Unemployment Insurance Benefits will be before you file a new
-          unemployment insurance claim.
-        </p>
+      <div class="row">
+        <div class="col-xl-6 col-lg-7">
+          <div class="p-3 p-md-5 pe-lg-0">
+            <img
+              src="/assets/img/co_cdle_div_ui.png"
+              alt="CDLE UI Logo"
+              width="auto"
+              height="68px"
+              class="mb-4 mb-lg-5"
+            />
+            <h1 class="fs-4xl fw-semibold fg-emphasis-inverse" style="text-wrap: balance">
+              Colorado Unemployment Insurance Benefits Estimator
+            </h1>
+            <p class="mt-3 fs-lg" style="text-wrap: balance">
+              Get an estimate of how much your Colorado Unemployment Insurance Benefits will be before you file a new
+              unemployment insurance claim.
+            </p>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-5">
+          <img
+            src="/assets/img/hero-img.webp"
+            alt="Scenic autumn landscape with Aspen trees and snowcapped peaks in the San Juan Mountains near Telluride, Colorado."
+            class="w-100 h-100 object-fit-cover"
+            style="aspect-ratio: 4 / 3"
+          />
+        </div>
       </div>
       <!-- Section 1 -->
       <div class="p-3 p-md-5 border-top">
@@ -200,8 +220,10 @@
             <div class="mb-xl-0 alert alert-info d-flex" role="note">
               <i class="bi bi-info-circle-fill flex-shrink-0 me-2" aria-hidden="true"></i>
               <div>
-                To request the alternate base period, follow the instructions on the Statement of Wages and Possible
-                Benefits you receive after filing your claim.
+                <p class="mb-0">
+                  To request the alternate base period, follow the instructions on the Statement of Wages and Possible
+                  Benefits you receive after filing your claim.
+                </p>
               </div>
             </div>
           </div>
@@ -242,129 +264,184 @@
         </div>
       </div>
       <!-- Section 4 -->
-      <div class="p-3 p-md-5 border-top">
-        <h2>Colorado Uses Two Formulas to Calculate Unemployment Benefits</h2>
-        <p>
-          Your actual benefits are based on the formula that results in the highest weekly amount. (The maximum weekly
-          benefit amount may be adjusted annually, effective July 1 of each year for new claims filed after that date.
-          The adjustment is based on current labor market conditions.)
-        </p>
-        <div class="p-2 border bg-body-secondary" style="border-radius: 14px">
-          <ul class="list-group list-group-numbered list-group-horizontal-xl shadow-sm">
-            <li class="list-group-item">
-              The first formula begins with the total wages paid for the highest two consecutive quarters in the base
-              period. The total earnings for this six-month period is divided by 26 (the number of weeks in the
-              six-month period). That number is then multiplied by 0.6 to determine your weekly benefit amount.
-              According to Colorado law, this weekly benefit amount currently cannot exceed $804 per week, or be less
-              than $25.
-            </li>
-            <li class="list-group-item">
-              The second formula begins with the total wages paid in the 12-month base period and divides that total by
-              52 (the number of weeks in a year). That number is then divided by 2 to determine your weekly benefit
-              amount. According to Colorado law, this weekly benefit amount currently cannot exceed $884 per week or be
-              less than $25.
-            </li>
-          </ul>
+      <div class="border-top">
+        <div class="row">
+          <div class="col-xl-5">
+            <div class="p-3 px-md-5 pt-md-5 pb-md-4">
+              <h2>Colorado Uses Two Formulas to Calculate Unemployment Benefits</h2>
+              <p class="mb-0">
+                Your actual benefits are based on the formula that results in the highest weekly amount. (The maximum
+                weekly benefit amount may be adjusted annually, effective July 1 of each year for new claims filed after
+                that date. The adjustment is based on current labor market conditions.)
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-7">
+            <div class="p-3 p-md-5 bg-body-secondary">
+              <ul class="list-group list-group-numbered shadow-sm">
+                <li class="list-group-item">
+                  The first formula begins with the total wages paid for the highest two consecutive quarters in the
+                  base period. The total earnings for this six-month period is divided by 26 (the number of weeks in the
+                  six-month period). That number is then multiplied by 0.6 to determine your weekly benefit amount.
+                  According to Colorado law, this weekly benefit amount currently cannot exceed $804 per week, or be
+                  less than $25.
+                </li>
+                <li class="list-group-item">
+                  The second formula begins with the total wages paid in the 12-month base period and divides that total
+                  by 52 (the number of weeks in a year). That number is then divided by 2 to determine your weekly
+                  benefit amount. According to Colorado law, this weekly benefit amount currently cannot exceed $884 per
+                  week or be less than $25.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Section 5 -->
       <div class="p-3 p-md-5 border-top bg-warning-subtle text-warning-emphasis">
-        <h2>
-          <i class="bi bi-exclamation-circle-fill flex-shrink-0 me-1" aria-hidden="true"></i>
-          Important Notes
-        </h2>
-        <p>
-          The maximum benefit amount per claim is equal to the lesser of 26 times the weekly benefit amount, or the sum
-          of one third of the total wages in each quarter for the 12 months of the base period. In order to figure out
-          how much your benefit amount is, we use the above formulas.
-        </p>
-        <p class="mb-0">
-          The reason(s) for the separation(s) from your last employer and/or your base period employer(s) might impact
-          the amount of benefits that you will receive. Unemployment benefits are for individuals who are out of work
-          through no fault of their own. If you have a separation from work that could be disqualifying, you may want to
-          consider the impact as you decide when to file.
-        </p>
+        <div class="row gx-4 gy-2">
+          <div class="col-lg-12">
+            <h2>
+              <i class="bi bi-exclamation-circle-fill flex-shrink-0 me-1" aria-hidden="true"></i>
+              Important Notes
+            </h2>
+          </div>
+          <div class="col-lg-6">
+            <p class="mb-0">
+              The maximum benefit amount per claim is equal to the lesser of 26 times the weekly benefit amount, or the
+              sum of one third of the total wages in each quarter for the 12 months of the base period. In order to
+              figure out how much your benefit amount is, we use the above formulas.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <p class="mb-0">
+              The reason(s) for the separation(s) from your last employer and/or your base period employer(s) might
+              impact the amount of benefits that you will receive. Unemployment benefits are for individuals who are out
+              of work through no fault of their own. If you have a separation from work that could be disqualifying, you
+              may want to consider the impact as you decide when to file.
+            </p>
+          </div>
+        </div>
       </div>
       <!-- Form Section -->
       <div class="p-3 p-md-5 border-top">
-        <div class="">
-          <div class="">
+        <div class="row gx-4 gy-2 mb-2">
+          <div class="col-lg-12">
             <h2>Instructions To Get an Estimate Of Your Potential Benefits</h2>
-            <p>
+          </div>
+          <div class="col-lg-6">
+            <p class="mb-0">
               If you are filing a claim between 11/04/2026 and 12/30/2026, your unemployment benefits will be based on
               all wages from all employers you worked for between 07/01/2025 through 06/30/2026. Please enter your
               <strong>gross</strong> wages (the amount you earned before taxes were withheld) for the periods indicated
               below. If you did not have any earnings during a given quarter, please enter zero for that quarter.
             </p>
-            <p>
+          </div>
+          <div class="col-lg-6">
+            <p class="mb-0">
               Since this estimate will be based on the amounts that you are now providing, it may differ from your
               actual benefit amount. To be as accurate as possible, you may want to refer to pay stub(s) and/or Form
               W2(s) you have received from your employer(s). If you refer to a Form W2, you will need to convert your
               gross pay from a yearly total into quarterly amounts.
             </p>
-            <div class="mb-xl-0 alert alert-info d-flex" role="note">
-              <i class="bi bi-info-circle-fill flex-shrink-0 me-2" aria-hidden="true"></i>
-              <div>This is an estimate only and is based on the information you provide.</div>
+          </div>
+        </div>
+        <div class="mt-4 card rounded-3 shadow-sm">
+          <div class="card-header">
+            <div class="row gx-3 gy-2">
+              <div class="col-lg-6">
+                <p class="mb-0">
+                  Enter your gross wages for the following periods. If you did not have any earnings during a given
+                  quarter, please enter zero for that quarter.
+                </p>
+              </div>
+              <div class="col-lg-6">
+                <div class="mb-0 alert alert-info d-flex" role="note">
+                  <i class="bi bi-info-circle-fill flex-shrink-0 me-2" aria-hidden="true"></i>
+                  <div>This is an estimate only and is based on the information you provide.</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="">
-            <div class="mt-4 card rounded-3 shadow-sm">
-              <div class="card-header">
-                Please use the following format to enter your wages. No dollar sign ($) is allowed in the input:
-                #########.##
-              </div>
-              <div class="card-body">
-                <form>
-                  <div class="row g-3">
-                    <div class="col-md-4 col-xl-2">
-                      <label for="wages1" class="form-label">7/1/2025–9/30/2025</label>
-                      <input type="number" class="form-control" id="wages1" />
-                    </div>
-                    <div class="col-md-4 col-xl-2">
-                      <label for="wages2" class="form-label">10/1/2025–12/31/2025</label>
-                      <input type="number" class="form-control" id="wages2" />
-                    </div>
-                    <div class="col-md-4 col-xl-2">
-                      <label for="wages3" class="form-label">1/1/2026–3/31/2026</label>
-                      <input type="number" class="form-control" id="wages3" />
-                    </div>
-                    <div class="col-md-4 col-xl-2">
-                      <label for="wages4" class="form-label">4/1/2026–6/30/2026</label>
-                      <input type="number" class="form-control" id="wages4" />
-                    </div>
-                    <div class="col-md-4 col-xl-2">
-                      <label for="wages5" class="form-label">7/1/2026–9/30/2026</label>
-                      <input type="number" class="form-control" id="wages5" />
-                    </div>
-                    <div class="col-md-4 col-xl-2">
-                      <label for="wages6" class="form-label">10/1/2026–12/31/2026</label>
-                      <input type="number" class="form-control" id="wages6" />
-                    </div>
-                    <div class="col-12">
-                      <button type="submit" class="btn btn-primary w-100">Estimate Your Benefits</button>
-                    </div>
+          <form class="needs-validation" novalidate>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-4 col-xl-2">
+                  <label for="wages1" class="form-label">7/1/2025–9/30/2025</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">$</span
+                    ><input type="number" class="form-control" id="wages1" required min="0" step="0.01" />
+                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
                   </div>
-                </form>
+                </div>
+                <div class="col-md-4 col-xl-2">
+                  <label for="wages2" class="form-label">10/1/2025–12/31/2025</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">$</span
+                    ><input type="number" class="form-control" id="wages2" required min="0" step="0.01" />
+                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xl-2">
+                  <label for="wages3" class="form-label">1/1/2026–3/31/2026</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">$</span
+                    ><input type="number" class="form-control" id="wages3" required min="0" step="0.01" />
+                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xl-2">
+                  <label for="wages4" class="form-label">4/1/2026–6/30/2026</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">$</span
+                    ><input type="number" class="form-control" id="wages4" required min="0" step="0.01" />
+                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xl-2">
+                  <label for="wages5" class="form-label">7/1/2026–9/30/2026</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">$</span
+                    ><input type="number" class="form-control" id="wages5" required min="0" step="0.01" />
+                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xl-2">
+                  <label for="wages6" class="form-label">10/1/2026–12/31/2026</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">$</span
+                    ><input type="number" class="form-control" id="wages6" required min="0" step="0.01" />
+                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+            <div class="card-footer">
+              <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary">Estimate Your Benefits</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
       <!-- End of Main Content -->
     </main>
     <!-- Start of Footer -->
-    <footer class="bg-body-tertiary mt-auto border-top py-3">
-      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <footer class="container mt-auto py-4 bg-body-tertiary border-top border-start border-end">
+      <div class="px-3 px-md-5 d-flex flex-column flex-lg-row justify-content-between align-items-center">
         <!-- Copyright / Left Side -->
-        <div class="mb-2 mb-md-0 text-muted d-flex flex-column flex-md-row align-items-center gap-2">
-          <img
-            src="./assets/img/co_cdle_emblem_black.png"
-            alt="CDLE Emblem"
-            width="auto"
-            height="24px"
-            class="opacity-75"
-          />
-          © 2026 CDLE UI Benefits Estimator 2.5.0.0
+        <div class="mb-2 mb-lg-0 text-muted d-flex flex-column flex-md-row align-items-center gap-2">
+          <div class="d-flex align-items-center">
+            <img
+              src="./assets/img/co_cdle_emblem_black.png"
+              alt="CDLE Emblem"
+              width="auto"
+              height="24px"
+              class="opacity-75 me-2"
+            />
+            © <span id="copyright-year">2026</span>
+          </div>
+          <div>CDLE UI Benefits Estimator 2.5.0.0</div>
         </div>
         <!-- Links / Right Side -->
         <ul class="nav">
@@ -383,5 +460,48 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false,
+          );
+        });
+      })();
+    </script>
+    <script>
+      // Header: current date and time (static, rendered on load)
+      const datetimeEl = document.getElementById("current-datetime");
+      if (datetimeEl) {
+        datetimeEl.textContent = new Date().toLocaleString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+          hour: "numeric",
+          minute: "2-digit",
+          timeZoneName: "short",
+        });
+      }
+
+      // Footer: keep copyright year current
+      const yearEl = document.getElementById("copyright-year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
