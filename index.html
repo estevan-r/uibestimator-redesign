@@ -88,10 +88,17 @@
     <header>
       <nav class="navbar py-1 bg-primary">
         <div class="container fs-sm">
-          <!-- Message -->
-          <p class="navbar-text mb-0 text-white text-opacity-75">Alert or info message</p>
+          <!-- CDLE link -->
+          <p class="navbar-text mb-0">
+            <a
+              href="https://cdle.colorado.gov/"
+              target="_blank"
+              class="link-light link-opacity-75 link-opacity-100-hover link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+              >Colorado Department of Labor and Employment</a
+            >
+          </p>
           <!-- Date and time info -->
-          <span id="current-datetime" class="navbar-text text-white text-opacity-75">Date time info will go here</span>
+          <p id="current-datetime" class="navbar-text mb-0 text-light text-opacity-75"></p>
         </div>
       </nav>
     </header>
@@ -101,7 +108,7 @@
       <!-- Hero Section -->
       <div class="row">
         <div class="col-xl-6 col-lg-7">
-          <div class="p-3 p-md-5 pe-lg-0">
+          <div class="px-3 py-5 px-md-5 pe-lg-0">
             <img
               src="/assets/img/co_cdle_div_ui.png"
               alt="CDLE UI Logo"
@@ -113,7 +120,8 @@
               Colorado Unemployment Insurance Benefits Estimator
             </h1>
             <p class="mt-3 fs-lg" style="text-wrap: balance">
-              Get an estimate of how much your Colorado Unemployment Insurance Benefits will be before you file a new
+              Get an estimate of how much your Colorado Unemployment Insurance Benefits will be before you file a
+              <strong>new</strong>
               unemployment insurance claim.
             </p>
           </div>
@@ -123,14 +131,14 @@
             src="/assets/img/hero-img.webp"
             alt="Scenic autumn landscape with Aspen trees and snowcapped peaks in the San Juan Mountains near Telluride, Colorado."
             class="w-100 h-100 object-fit-cover"
-            style="aspect-ratio: 4 / 3"
+            style="aspect-ratio: 16 / 9; object-position: 50% 30%"
           />
         </div>
       </div>
       <!-- Benefits Info -->
       <div id="benefits-info">
         <!-- Section 1 -->
-        <div class="p-3 p-md-5 border-top">
+        <div class="px-3 py-5 px-md-5 border-top">
           <div class="row gx-4 gy-2">
             <div class="col-lg-4">
               <h2>How Are Benefits Calculated?</h2>
@@ -190,7 +198,7 @@
           <div class="row">
             <!-- Section 2 -->
             <div class="col-lg-6 border-end">
-              <div class="p-3 p-md-5">
+              <div class="px-3 py-5 px-md-5">
                 <h2>Base Period</h2>
                 <p>
                   A base period is a time-frame in which we review the amount of wages you earned to determine if you
@@ -233,7 +241,7 @@
             </div>
             <!-- Section 3 -->
             <div class="col-lg-6">
-              <div class="p-3 p-md-5 border-top border-top-lg-0">
+              <div class="px-3 py-5 px-md-5 border-top border-top-lg-0">
                 <h2>Alternate Base Period</h2>
                 <p class="mb-lg-40">
                   If you did not earn at least $2,500 during the standard base period, you may be eligible using an
@@ -283,7 +291,7 @@
           </div>
         </div>
         <!-- Section 4 -->
-        <div class="p-3 p-md-5 border-top">
+        <div class="px-3 py-5 px-md-5 border-top">
           <div class="row gx-5">
             <div class="col-xl-6">
               <div class="">
@@ -317,7 +325,7 @@
           </div>
         </div>
         <!-- Section 5 -->
-        <div class="p-3 p-md-5 border-top bg-warning-subtle text-warning-emphasis">
+        <div class="px-3 py-5 px-md-5 border-top bg-warning-subtle text-warning-emphasis">
           <div class="row gx-4 gy-2">
             <div class="col-lg-12">
               <h2>
@@ -343,7 +351,7 @@
           </div>
         </div>
         <!-- Form Section -->
-        <div class="p-3 p-md-5 border-top">
+        <div class="px-3 py-5 px-md-5 border-top">
           <div class="row gx-4 mb-2">
             <div class="col-lg-12">
               <h2>Instructions To Get an Estimate Of Your Potential Benefits</h2>
@@ -385,7 +393,7 @@
             </div>
             <form class="needs-validation" novalidate>
               <div class="card-body">
-                <div class="row g-3">
+                <div class="row g-4">
                   <div class="col-md-4 col-xl-2">
                     <label for="wages1" class="form-label">7/1/2025–9/30/2025</label>
                     <div class="input-group has-validation">
@@ -437,8 +445,8 @@
                 </div>
               </div>
               <div class="card-footer">
-                <div class="d-flex justify-content-end">
-                  <button type="submit" class="shadow-sm btn btn-primary">Estimate Your Benefits</button>
+                <div class="d-grid d-md-flex justify-content-md-end">
+                  <button type="submit" class="btn btn-primary">Estimate Your Benefits</button>
                 </div>
               </div>
             </form>
@@ -448,7 +456,7 @@
       <!-- Calculated Benefits -->
       <div id="calculated-benefits" class="d-none" tabindex="-1">
         <!-- Estimated Benefits -->
-        <div class="p-3 p-md-5 border-top">
+        <div class="px-3 py-5 px-md-5 border-top">
           <div class="row gx-4">
             <div class="col-lg-12">
               <h2>Estimated Benefit Amounts</h2>
@@ -473,7 +481,9 @@
             <div class="col-lg-6">
               <div class="card rounded-3 shadow-sm">
                 <div class="card-header">
-                  <h3>If You File Your Claim Before <br />12/31/2026</h3>
+                  <h3>
+                    If You File Your Claim Before <br /><span class="badge text-bg-dark fw-semibold">12/31/2026</span>
+                  </h3>
                   <div>
                     If you file your claim before 12/31/2026 this is your estimated unemployment benefit amount.
                   </div>
@@ -492,11 +502,11 @@
                     <tbody>
                       <tr>
                         <td>Your Weekly Benefit Amount(WBA)</td>
-                        <td align="right">$000.00</td>
+                        <td align="right" id="wba-current">$000.00</td>
                       </tr>
                       <tr>
                         <td>Your Maximum Benefit Amount(MBA)</td>
-                        <td align="right">$00,000</td>
+                        <td align="right" id="mba-current">$00,000</td>
                       </tr>
                     </tbody>
                   </table>
@@ -511,7 +521,11 @@
             <div class="col-lg-6">
               <div class="card rounded-3 shadow-sm">
                 <div class="card-header">
-                  <h3>If You File Your Claim Between <br />12/31/2026–3/31/2027</h3>
+                  <h3>
+                    If You File Your Claim Between <br /><span class="badge text-bg-dark fw-semibold">12/31/2026</span>
+                    –
+                    <span class="badge text-bg-dark fw-semibold">3/31/2027</span>
+                  </h3>
                   <div>
                     If you wait and file your claim between 12/31/2026 and 3/31/2027, this would be your estimated
                     benefit amounts.
@@ -531,11 +545,11 @@
                     <tbody>
                       <tr>
                         <td>Your Weekly Benefit Amount(WBA)</td>
-                        <td align="right">$000.00</td>
+                        <td align="right" id="wba-next">$000.00</td>
                       </tr>
                       <tr>
                         <td>Your Maximum Benefit Amount(MBA)</td>
-                        <td align="right">$00,000</td>
+                        <td align="right" id="mba-next">$00,000</td>
                       </tr>
                     </tbody>
                   </table>
@@ -551,7 +565,7 @@
         </div>
         <!-- Quarter Change -->
         <div class="border-top">
-          <div class="row p-3 p-md-5 gx-4 gy-2">
+          <div class="row px-3 py-5 px-md-5 gx-4 gy-2">
             <div class="col-lg-6">
               <div>
                 <h2>A Calendar Quarter Change Can Impact Benefit Amounts</h2>
@@ -611,7 +625,7 @@
         </div>
         <!-- CTA -->
         <div class="border-top">
-          <div class="row p-3 p-md-5 gx-4">
+          <div class="row px-3 py-5 px-md-5 gx-4">
             <div class="col-lg-12">
               <h2>The Benefit Amounts Are Locked In</h2>
             </div>
@@ -622,13 +636,14 @@
               </p>
             </div>
             <div class="col-lg-6">
-              <a
-                href="https://cdle.colorado.gov/ui/claimants/start-a-claim"
-                target="_blank"
-                class="shadow-sm btn btn-primary btn-lg"
-                role="button"
-                >File a Claim <i class="bi bi-box-arrow-up-right flex-shrink-0 ms-2" aria-hidden="true"></i
-              ></a>
+              <div class="d-grid d-md-flex">
+                <a
+                  href="https://cdle.colorado.gov/ui/claimants/start-a-claim"
+                  target="_blank"
+                  class="btn btn-primary btn-lg"
+                  >File a Claim <i class="bi bi-box-arrow-up-right flex-shrink-0 ms-2" aria-hidden="true"></i
+                ></a>
+              </div>
             </div>
           </div>
         </div>
@@ -648,7 +663,7 @@
               height="24px"
               class="opacity-75 me-2"
             />
-            © <span id="copyright-year">2026</span>
+            © <span id="copyright-year" class="ms-1">2026</span>
           </div>
           <div>CDLE UI Benefits Estimator 2.5.0.0</div>
         </div>
@@ -714,6 +729,30 @@
       if (yearEl) yearEl.textContent = new Date().getFullYear();
     </script>
     <script>
+      // Demo: statutory figures (Colorado adjusts these annually)
+      const FORMULA_1_CAP = 804;
+      const FORMULA_2_CAP = 884;
+      const MINIMUM_WBA = 25;
+
+      // Demo: run both statutory formulas for one 4-quarter base period window
+      function calculateBenefits(wages) {
+        const total = wages.reduce((sum, w) => sum + w, 0);
+
+        // Formula 1: highest two consecutive quarters ÷ 26 × 0.6, clamped to $25–$804
+        let topTwo = 0;
+        for (let i = 0; i < wages.length - 1; i++) {
+          topTwo = Math.max(topTwo, wages[i] + wages[i + 1]);
+        }
+        const wba1 = Math.min(Math.max((topTwo / 26) * 0.6, MINIMUM_WBA), FORMULA_1_CAP);
+
+        // Formula 2: 12-month total ÷ 52 ÷ 2, clamped to $25–$884
+        const wba2 = Math.min(Math.max(total / 52 / 2, MINIMUM_WBA), FORMULA_2_CAP);
+
+        const wba = Math.max(wba1, wba2);
+        const mba = Math.min(wba * 26, total / 3);
+        return { wba, mba };
+      }
+
       // Demo: reveal the estimated benefits section on a valid submit
       const estimateForm = document.querySelector("form.needs-validation");
       const benefitsSection = document.getElementById("calculated-benefits");
@@ -721,6 +760,29 @@
         estimateForm.addEventListener("submit", (event) => {
           event.preventDefault(); // no backend — keep the page in place
           if (estimateForm.checkValidity()) {
+            const wages = [1, 2, 3, 4, 5, 6].map((n) => Number(document.getElementById(`wages${n}`).value));
+            const current = calculateBenefits(wages.slice(0, 4)); // base period 7/1/2025–6/30/2026
+            const next = calculateBenefits(wages.slice(1, 5)); // base period shifted one quarter
+
+            document.getElementById("wba-current").textContent = current.wba.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+            });
+            document.getElementById("mba-current").textContent = current.mba.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+              maximumFractionDigits: 0,
+            });
+            document.getElementById("wba-next").textContent = next.wba.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+            });
+            document.getElementById("mba-next").textContent = next.mba.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+              maximumFractionDigits: 0,
+            });
+
             benefitsSection.classList.remove("d-none");
             benefitsSection.scrollIntoView({ behavior: "smooth", block: "start" });
             benefitsSection.focus({ preventScroll: true });
