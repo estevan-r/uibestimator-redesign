@@ -60,7 +60,10 @@
         --bs-table-color-type: var(--bs-white);
       }
       .tracking-tight {
-        letter-spacing: -0.025em;
+        letter-spacing: -0.025em !important;
+      }
+      .mt-05 {
+        margin-top: 0.125rem !important;
       }
       .fs-sm {
         font-size: 0.875rem !important;
@@ -94,7 +97,7 @@
     </header>
     <!-- End of Header -->
     <!-- Start of Main Content -->
-    <main class="container p-0 flex-shrink-0 border-end border-start" style="text-wrap: pretty">
+    <main class="container p-0 flex-shrink-0 border-end border-start overflow-hidden" style="text-wrap: pretty">
       <!-- Hero Section -->
       <div class="row">
         <div class="col-xl-6 col-lg-7">
@@ -124,318 +127,510 @@
           />
         </div>
       </div>
-      <!-- Section 1 -->
-      <div class="p-3 p-md-5 border-top">
-        <div class="row gx-4 gy-2">
-          <div class="col-lg-4">
-            <h2>How Are Benefits Calculated?</h2>
-            <p>
-              We will examine the separation from your most recent employer and any other employer(s) that you worked
-              for during a predetermined 12-month period of time called the "base period." You must have earned at least
-              $2,500 in wages to receive unemployment insurance benefits.
-            </p>
-          </div>
-          <div class="col-lg-8">
-            <div class="card rounded-3 shadow-sm">
-              <div class="card-header">
-                <h3>Calendar Quarters</h3>
-                <div>A calendar quarter is equal to 3 month segments of the year beginning in January.</div>
-              </div>
-              <div class="card-body">
-                <table class="table table-sm mb-0">
-                  <caption class="pb-1">
-                    Calendar Quarter Months
-                  </caption>
-                  <thead>
-                    <tr>
-                      <th scope="col">QTR 1</th>
-                      <th scope="col">QTR 2</th>
-                      <th scope="col">QTR 3</th>
-                      <th scope="col">QTR 4</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Jan</td>
-                      <td>Apr</td>
-                      <td>Jul</td>
-                      <td>Oct</td>
-                    </tr>
-                    <tr>
-                      <td>Feb</td>
-                      <td>May</td>
-                      <td>Aug</td>
-                      <td>Nov</td>
-                    </tr>
-                    <tr>
-                      <td>Mar</td>
-                      <td>Jun</td>
-                      <td>Sep</td>
-                      <td>Dec</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Section 2 & 3 -->
-      <div class="border-top">
-        <div class="row">
-          <!-- Section 2 -->
-          <div class="col-lg-6 border-end">
-            <div class="p-3 p-md-5">
-              <h2>Base Period</h2>
+      <!-- Benefits Info -->
+      <div id="benefits-info">
+        <!-- Section 1 -->
+        <div class="p-3 p-md-5 border-top">
+          <div class="row gx-4 gy-2">
+            <div class="col-lg-4">
+              <h2>How Are Benefits Calculated?</h2>
               <p>
-                A base period is a time-frame in which we review the amount of wages you earned to determine if you
-                qualify for benefits. You must have earned $2,500 during a standard base period, which is the first four
-                of the last five completed calendar quarters before the start date of your claim.
+                We will examine the separation from your most recent employer and any other employer(s) that you worked
+                for during a predetermined 12-month period of time called the "base period." You must have earned at
+                least $2,500 in wages to receive unemployment insurance benefits.
               </p>
+            </div>
+            <div class="col-lg-8">
               <div class="card rounded-3 shadow-sm">
-                <h3 class="card-header">Example</h3>
+                <div class="card-header">
+                  <h3>Calendar Quarters</h3>
+                  <div>A calendar quarter is equal to 3 month segments of the year beginning in January.</div>
+                </div>
                 <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-sm mb-0">
-                      <caption class="pb-1">
-                        Example of the Standard Base Period
-                      </caption>
-                      <thead>
-                        <tr class="align-top">
-                          <th scope="col">Filing Date</th>
-                          <th scope="col" class="cell-non-base">Non Base Period</th>
-                          <th scope="col" colspan="4" class="cell-base-period">
-                            Standard Base Period<br />
-                            <span class="fw-normal fst-italic">Must have earned at least $2,500</span>
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Qtr 1 2026</td>
-                          <td class="cell-non-base">Qtr 4 2025</td>
-                          <td class="cell-base-period">Qtr 3 2025</td>
-                          <td class="cell-base-period">Qtr 2 2025</td>
-                          <td class="cell-base-period">Qtr 1 2025</td>
-                          <td class="cell-base-period">Qtr 4 2024</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                  <table class="table table-sm mb-0">
+                    <caption class="pb-1">
+                      Calendar Quarter Months
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">QTR 1</th>
+                        <th scope="col">QTR 2</th>
+                        <th scope="col">QTR 3</th>
+                        <th scope="col">QTR 4</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Jan</td>
+                        <td>Apr</td>
+                        <td>Jul</td>
+                        <td>Oct</td>
+                      </tr>
+                      <tr>
+                        <td>Feb</td>
+                        <td>May</td>
+                        <td>Aug</td>
+                        <td>Nov</td>
+                      </tr>
+                      <tr>
+                        <td>Mar</td>
+                        <td>Jun</td>
+                        <td>Sep</td>
+                        <td>Dec</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Section 3 -->
-          <div class="col-lg-6">
-            <div class="p-3 p-md-5 border-top border-top-lg-0">
-              <h2>Alternate Base Period</h2>
-              <p class="mb-lg-40">
-                If you did not earn at least $2,500 during the standard base period, you may be eligible using an
-                alternate base period (the last four completed calendar quarters before the start date of your claim).
-              </p>
-              <div class="card mb-3 rounded-3 shadow-sm">
-                <h3 class="card-header">Example</h3>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-sm mb-0">
-                      <caption class="pb-1">
-                        Example of the Alternate Base Period
-                      </caption>
-                      <thead>
-                        <tr class="align-top">
-                          <th scope="col">Filing Date</th>
-                          <th scope="col" colspan="4" class="cell-base-period">
-                            Alternate Base Period<br />
-                            <span class="fw-normal fst-italic">Must have earned at least $2,500</span>
-                          </th>
-                          <th scope="col" class="cell-non-base">Non Base Period</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Qtr 1 2026</td>
-                          <td class="cell-base-period">Qtr 4 2025</td>
-                          <td class="cell-base-period">Qtr 3 2025</td>
-                          <td class="cell-base-period">Qtr 2 2025</td>
-                          <td class="cell-base-period">Qtr 1 2025</td>
-                          <td class="cell-non-base">Qtr 4 2024</td>
-                        </tr>
-                      </tbody>
-                    </table>
+        </div>
+        <!-- Section 2 & 3 -->
+        <div class="border-top">
+          <div class="row">
+            <!-- Section 2 -->
+            <div class="col-lg-6 border-end">
+              <div class="p-3 p-md-5">
+                <h2>Base Period</h2>
+                <p>
+                  A base period is a time-frame in which we review the amount of wages you earned to determine if you
+                  qualify for benefits. You must have earned $2,500 during a standard base period, which is the first
+                  four of the last five completed calendar quarters before the start date of your claim.
+                </p>
+                <div class="card rounded-3 shadow-sm">
+                  <h3 class="card-header">Example</h3>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-sm mb-0">
+                        <caption class="pb-1">
+                          Example of the Standard Base Period
+                        </caption>
+                        <thead>
+                          <tr class="align-top">
+                            <th scope="col">Filing Date</th>
+                            <th scope="col" class="cell-non-base">Non Base Period</th>
+                            <th scope="col" colspan="4" class="cell-base-period">
+                              Standard Base Period<br />
+                              <span class="fw-normal fst-italic">Must have earned at least $2,500</span>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Qtr 1 2026</td>
+                            <td class="cell-non-base">Qtr 4 2025</td>
+                            <td class="cell-base-period">Qtr 3 2025</td>
+                            <td class="cell-base-period">Qtr 2 2025</td>
+                            <td class="cell-base-period">Qtr 1 2025</td>
+                            <td class="cell-base-period">Qtr 4 2024</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="alert alert-info d-flex mb-0 py-2" role="note">
-                <i class="bi bi-info-circle-fill flex-shrink-0 me-2" aria-hidden="true"></i>
-                <p class="mb-0 fs-sm tracking-tight">
-                  To request the alternate base period, follow the instructions on the Statement of Wages and Possible
-                  Benefits you receive after filing your claim.
+            </div>
+            <!-- Section 3 -->
+            <div class="col-lg-6">
+              <div class="p-3 p-md-5 border-top border-top-lg-0">
+                <h2>Alternate Base Period</h2>
+                <p class="mb-lg-40">
+                  If you did not earn at least $2,500 during the standard base period, you may be eligible using an
+                  alternate base period (the last four completed calendar quarters before the start date of your claim).
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Section 4 -->
-      <div class="p-3 p-md-5 border-top">
-        <div class="row gx-5">
-          <div class="col-xl-6">
-            <div class="">
-              <h2>Colorado Uses Two Formulas to Calculate Unemployment Benefits</h2>
-              <p>
-                Your actual benefits are based on the formula that results in the highest weekly amount. (The maximum
-                weekly benefit amount may be adjusted annually, effective July 1 of each year for new claims filed after
-                that date. The adjustment is based on current labor market conditions.)
-              </p>
-            </div>
-          </div>
-          <div class="col-xl-6">
-            <div class="p-2 bg-body-secondary border" style="border-radius: 0.875rem">
-              <ul class="list-group list-group-numbered shadow-sm">
-                <li class="list-group-item">
-                  The first formula begins with the total wages paid for the highest two consecutive quarters in the
-                  base period. The total earnings for this six-month period is divided by 26 (the number of weeks in the
-                  six-month period). That number is then multiplied by 0.6 to determine your weekly benefit amount.
-                  According to Colorado law, this weekly benefit amount currently cannot exceed $804 per week, or be
-                  less than $25.
-                </li>
-                <li class="list-group-item">
-                  The second formula begins with the total wages paid in the 12-month base period and divides that total
-                  by 52 (the number of weeks in a year). That number is then divided by 2 to determine your weekly
-                  benefit amount. According to Colorado law, this weekly benefit amount currently cannot exceed $884 per
-                  week or be less than $25.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Section 5 -->
-      <div class="p-3 p-md-5 border-top bg-warning-subtle text-warning-emphasis">
-        <div class="row gx-4 gy-2">
-          <div class="col-lg-12">
-            <h2>
-              <i class="bi bi-exclamation-circle-fill flex-shrink-0 me-1" aria-hidden="true"></i>
-              Important Notes
-            </h2>
-          </div>
-          <div class="col-lg-6">
-            <p class="mb-0">
-              The maximum benefit amount per claim is equal to the lesser of 26 times the weekly benefit amount, or the
-              sum of one third of the total wages in each quarter for the 12 months of the base period. In order to
-              figure out how much your benefit amount is, we use the above formulas.
-            </p>
-          </div>
-          <div class="col-lg-6">
-            <p class="mb-0">
-              The reason(s) for the separation(s) from your last employer and/or your base period employer(s) might
-              impact the amount of benefits that you will receive. Unemployment benefits are for individuals who are out
-              of work through no fault of their own. If you have a separation from work that could be disqualifying, you
-              may want to consider the impact as you decide when to file.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- Form Section -->
-      <div class="p-3 p-md-5 border-top">
-        <div class="row gx-4 gy-2 mb-2">
-          <div class="col-lg-12">
-            <h2>Instructions To Get an Estimate Of Your Potential Benefits</h2>
-          </div>
-          <div class="col-lg-6">
-            <p class="mb-0">
-              If you are filing a claim between 11/04/2026 and 12/30/2026, your unemployment benefits will be based on
-              all wages from all employers you worked for between 07/01/2025 through 06/30/2026. Please enter your
-              <strong>gross</strong> wages (the amount you earned before taxes were withheld) for the periods indicated
-              below. If you did not have any earnings during a given quarter, please enter zero for that quarter.
-            </p>
-          </div>
-          <div class="col-lg-6">
-            <p class="mb-0">
-              Since this estimate will be based on the amounts that you are now providing, it may differ from your
-              actual benefit amount. To be as accurate as possible, you may want to refer to pay stub(s) and/or Form
-              W2(s) you have received from your employer(s). If you refer to a Form W2, you will need to convert your
-              gross pay from a yearly total into quarterly amounts.
-            </p>
-          </div>
-        </div>
-        <div class="mt-4 card rounded-3 shadow-sm">
-          <div class="card-header">
-            <div class="row gx-3 gy-2">
-              <div class="col-lg-6">
-                <p class="mb-0 fs-sm">
-                  Enter your gross wages for the following periods. If you did not have any earnings during a given
-                  quarter, please enter zero for that quarter.
-                </p>
-              </div>
-              <div class="col-lg-6">
-                <div class="alert alert-info d-flex align-items-center mb-0 py-2" role="note">
+                <div class="card mb-3 rounded-3 shadow-sm">
+                  <h3 class="card-header">Example</h3>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-sm mb-0">
+                        <caption class="pb-1">
+                          Example of the Alternate Base Period
+                        </caption>
+                        <thead>
+                          <tr class="align-top">
+                            <th scope="col">Filing Date</th>
+                            <th scope="col" colspan="4" class="cell-base-period">
+                              Alternate Base Period<br />
+                              <span class="fw-normal fst-italic">Must have earned at least $2,500</span>
+                            </th>
+                            <th scope="col" class="cell-non-base">Non Base Period</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Qtr 1 2026</td>
+                            <td class="cell-base-period">Qtr 4 2025</td>
+                            <td class="cell-base-period">Qtr 3 2025</td>
+                            <td class="cell-base-period">Qtr 2 2025</td>
+                            <td class="cell-base-period">Qtr 1 2025</td>
+                            <td class="cell-non-base">Qtr 4 2024</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="alert alert-info d-flex mb-0 py-2" role="note">
                   <i class="bi bi-info-circle-fill flex-shrink-0 me-2" aria-hidden="true"></i>
-                  <div class="fs-sm">This is an estimate only and is based on the information you provide.</div>
+                  <p class="mb-0 fs-sm tracking-tight">
+                    To request the alternate base period, follow the instructions on the Statement of Wages and Possible
+                    Benefits you receive after filing your claim.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <form class="needs-validation" novalidate>
-            <div class="card-body">
-              <div class="row g-3">
-                <div class="col-md-4 col-xl-2">
-                  <label for="wages1" class="form-label">7/1/2025–9/30/2025</label>
-                  <div class="input-group has-validation">
-                    <span class="input-group-text">$</span
-                    ><input type="number" class="form-control" id="wages1" required min="0" step="0.01" />
-                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
-                  </div>
+        </div>
+        <!-- Section 4 -->
+        <div class="p-3 p-md-5 border-top">
+          <div class="row gx-5">
+            <div class="col-xl-6">
+              <div class="">
+                <h2>Colorado Uses Two Formulas to Calculate Unemployment Benefits</h2>
+                <p>
+                  Your actual benefits are based on the formula that results in the highest weekly amount. (The maximum
+                  weekly benefit amount may be adjusted annually, effective July 1 of each year for new claims filed
+                  after that date. The adjustment is based on current labor market conditions.)
+                </p>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="p-2 bg-body-secondary border" style="border-radius: 0.875rem">
+                <ul class="list-group list-group-numbered shadow-sm">
+                  <li class="list-group-item">
+                    The first formula begins with the total wages paid for the highest two consecutive quarters in the
+                    base period. The total earnings for this six-month period is divided by 26 (the number of weeks in
+                    the six-month period). That number is then multiplied by 0.6 to determine your weekly benefit
+                    amount. According to Colorado law, this weekly benefit amount currently cannot exceed $804 per week,
+                    or be less than $25.
+                  </li>
+                  <li class="list-group-item">
+                    The second formula begins with the total wages paid in the 12-month base period and divides that
+                    total by 52 (the number of weeks in a year). That number is then divided by 2 to determine your
+                    weekly benefit amount. According to Colorado law, this weekly benefit amount currently cannot exceed
+                    $884 per week or be less than $25.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Section 5 -->
+        <div class="p-3 p-md-5 border-top bg-warning-subtle text-warning-emphasis">
+          <div class="row gx-4 gy-2">
+            <div class="col-lg-12">
+              <h2>
+                <i class="bi bi-exclamation-circle-fill flex-shrink-0 me-1" aria-hidden="true"></i>
+                Important Notes
+              </h2>
+            </div>
+            <div class="col-lg-6">
+              <p class="mb-0">
+                The maximum benefit amount per claim is equal to the lesser of 26 times the weekly benefit amount, or
+                the sum of one third of the total wages in each quarter for the 12 months of the base period. In order
+                to figure out how much your benefit amount is, we use the above formulas.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <p class="mb-0">
+                The reason(s) for the separation(s) from your last employer and/or your base period employer(s) might
+                impact the amount of benefits that you will receive. Unemployment benefits are for individuals who are
+                out of work through no fault of their own. If you have a separation from work that could be
+                disqualifying, you may want to consider the impact as you decide when to file.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Form Section -->
+        <div class="p-3 p-md-5 border-top">
+          <div class="row gx-4 mb-2">
+            <div class="col-lg-12">
+              <h2>Instructions To Get an Estimate Of Your Potential Benefits</h2>
+            </div>
+            <div class="col-lg-6">
+              <p>
+                If you are filing a claim between 11/04/2026 and 12/30/2026, your unemployment benefits will be based on
+                all wages from all employers you worked for between 07/01/2025 through 06/30/2026. Please enter your
+                <strong>gross</strong> wages (the amount you earned before taxes were withheld) for the periods
+                indicated below. If you did not have any earnings during a given quarter, please enter zero for that
+                quarter.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <p>
+                Since this estimate will be based on the amounts that you are now providing, it may differ from your
+                actual benefit amount. To be as accurate as possible, you may want to refer to pay stub(s) and/or Form
+                W2(s) you have received from your employer(s). If you refer to a Form W2, you will need to convert your
+                gross pay from a yearly total into quarterly amounts.
+              </p>
+            </div>
+          </div>
+          <div class="card rounded-3 shadow-sm">
+            <div class="card-header">
+              <div class="row gx-4 gy-2">
+                <div class="col-lg-6">
+                  <p class="mb-0 fs-sm">
+                    Enter your gross wages for the following periods. If you did not have any earnings during a given
+                    quarter, please enter zero for that quarter.
+                  </p>
                 </div>
-                <div class="col-md-4 col-xl-2">
-                  <label for="wages2" class="form-label">10/1/2025–12/31/2025</label>
-                  <div class="input-group has-validation">
-                    <span class="input-group-text">$</span
-                    ><input type="number" class="form-control" id="wages2" required min="0" step="0.01" />
-                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-xl-2">
-                  <label for="wages3" class="form-label">1/1/2026–3/31/2026</label>
-                  <div class="input-group has-validation">
-                    <span class="input-group-text">$</span
-                    ><input type="number" class="form-control" id="wages3" required min="0" step="0.01" />
-                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-xl-2">
-                  <label for="wages4" class="form-label">4/1/2026–6/30/2026</label>
-                  <div class="input-group has-validation">
-                    <span class="input-group-text">$</span
-                    ><input type="number" class="form-control" id="wages4" required min="0" step="0.01" />
-                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-xl-2">
-                  <label for="wages5" class="form-label">7/1/2026–9/30/2026</label>
-                  <div class="input-group has-validation">
-                    <span class="input-group-text">$</span
-                    ><input type="number" class="form-control" id="wages5" required min="0" step="0.01" />
-                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-xl-2">
-                  <label for="wages6" class="form-label">10/1/2026–12/31/2026</label>
-                  <div class="input-group has-validation">
-                    <span class="input-group-text">$</span
-                    ><input type="number" class="form-control" id="wages6" required min="0" step="0.01" />
-                    <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                <div class="col-lg-6">
+                  <div class="alert alert-info d-flex mb-0 py-2" role="note">
+                    <i class="bi bi-info-circle-fill flex-shrink-0 me-2" aria-hidden="true"></i>
+                    <div class="mt-05 fs-sm">This is an estimate only and is based on the information you provide.</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card-footer">
-              <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-primary">Estimate Your Benefits</button>
+            <form class="needs-validation" novalidate>
+              <div class="card-body">
+                <div class="row g-3">
+                  <div class="col-md-4 col-xl-2">
+                    <label for="wages1" class="form-label">7/1/2025–9/30/2025</label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text">$</span
+                      ><input type="number" class="form-control" id="wages1" required min="0" step="0.01" />
+                      <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-xl-2">
+                    <label for="wages2" class="form-label">10/1/2025–12/31/2025</label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text">$</span
+                      ><input type="number" class="form-control" id="wages2" required min="0" step="0.01" />
+                      <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-xl-2">
+                    <label for="wages3" class="form-label">1/1/2026–3/31/2026</label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text">$</span
+                      ><input type="number" class="form-control" id="wages3" required min="0" step="0.01" />
+                      <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-xl-2">
+                    <label for="wages4" class="form-label">4/1/2026–6/30/2026</label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text">$</span
+                      ><input type="number" class="form-control" id="wages4" required min="0" step="0.01" />
+                      <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-xl-2">
+                    <label for="wages5" class="form-label">7/1/2026–9/30/2026</label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text">$</span
+                      ><input type="number" class="form-control" id="wages5" required min="0" step="0.01" />
+                      <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-xl-2">
+                    <label for="wages6" class="form-label">10/1/2026–12/31/2026</label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text">$</span
+                      ><input type="number" class="form-control" id="wages6" required min="0" step="0.01" />
+                      <div class="invalid-feedback">Please enter a valid amount or 0.00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="d-flex justify-content-end">
+                  <button type="submit" class="shadow-sm btn btn-primary">Estimate Your Benefits</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Calculated Benefits -->
+      <div id="calculated-benefits" class="d-none" tabindex="-1">
+        <!-- Estimated Benefits -->
+        <div class="p-3 p-md-5 border-top">
+          <div class="row gx-4">
+            <div class="col-lg-12">
+              <h2>Estimated Benefit Amounts</h2>
+            </div>
+            <div class="col-lg-6">
+              <p>
+                These estimates are based on the amounts that you have provided and may differ from your actual benefit
+                amount. Remember this is an <strong>estimate</strong> only.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <div class="alert alert-warning d-flex py-2" role="note">
+                <i class="bi bi-exclamation-circle-fill flex-shrink-0 me-2" aria-hidden="true"></i>
+                <div class="mt-05 fs-sm">
+                  Actual Benefit amounts are based on the wages reported by your employer(s).
+                </div>
               </div>
             </div>
-          </form>
+          </div>
+          <!-- Claim Tables -->
+          <div class="row gx-4 gy-3">
+            <div class="col-lg-6">
+              <div class="card rounded-3 shadow-sm">
+                <div class="card-header">
+                  <h3>If You File Your Claim Before <br />12/31/2026</h3>
+                  <div>
+                    If you file your claim before 12/31/2026 this is your estimated unemployment benefit amount.
+                  </div>
+                </div>
+                <div class="card-body">
+                  <table class="table table-sm mb-0">
+                    <caption class="pb-1">
+                      Current Quarter Estimated Benefit Amounts
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Current Quarter</th>
+                        <th scope="col">Benefit Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Your Weekly Benefit Amount(WBA)</td>
+                        <td align="right">$000.00</td>
+                      </tr>
+                      <tr>
+                        <td>Your Maximum Benefit Amount(MBA)</td>
+                        <td align="right">$00,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-footer">
+                  <p class="mb-0 fs-sm">
+                    <em>*See below for information about quarter change options.</em>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card rounded-3 shadow-sm">
+                <div class="card-header">
+                  <h3>If You File Your Claim Between <br />12/31/2026–3/31/2027</h3>
+                  <div>
+                    If you wait and file your claim between 12/31/2026 and 3/31/2027, this would be your estimated
+                    benefit amounts.
+                  </div>
+                </div>
+                <div class="card-body">
+                  <table class="table table-sm mb-0">
+                    <caption class="pb-1">
+                      Next Quarter Estimated Benefit Amounts
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Next Quarter</th>
+                        <th scope="col">Benefit Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Your Weekly Benefit Amount(WBA)</td>
+                        <td align="right">$000.00</td>
+                      </tr>
+                      <tr>
+                        <td>Your Maximum Benefit Amount(MBA)</td>
+                        <td align="right">$00,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-footer">
+                  <p class="mb-0 fs-sm">
+                    <em>Benefits will not be paid for any weeks prior to the effective date of your claim.</em>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Quarter Change -->
+        <div class="border-top">
+          <div class="row p-3 p-md-5 gx-4 gy-2">
+            <div class="col-lg-6">
+              <div>
+                <h2>A Calendar Quarter Change Can Impact Benefit Amounts</h2>
+                <p>
+                  The “base period” used to establish a claim changes at the beginning of every calendar quarter.The
+                  weekly and maximum benefit amounts established for a claim stay the same for the 1-year life of that
+                  claim.The date on which a claim becomes effective may make a difference in the weekly and maximum
+                  benefit amounts for that claim.
+                </p>
+                <p>
+                  Most of the time, the weekly and maximum benefit amounts are the same or nearly the same no matter
+                  which quarter the claim was filed in. However, sometimes the amounts can vary significantly.Therefore,
+                  you may want to consider these differences in deciding when to file your claim.This Benefits Estimator
+                  projects the weekly benefit amount and maximum benefit amount for both the current quarter and the
+                  next quarter.It is intended to give you an idea of how your benefit amounts may vary depending on
+                  which quarter your claim becomes effective.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card shadow-sm">
+                <div class="card-header fw-semibold">Here are some factors to consider:</div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    If you made <strong>significantly more money over the last six months</strong>, your weekly benefit
+                    amount might be higher if you wait for the next quarter to file your claim.
+                  </li>
+                  <li class="list-group-item">
+                    If you made <strong>significantly less money over the last six months</strong>, your weekly benefit
+                    amount might be lower if you wait until the next quarter to file your claim.
+                  </li>
+                  <li class="list-group-item">
+                    The reason(s) for the separation(s) from your last employer and / or your base period employer(s)
+                    might impact the amount of benefits that you will receive.Unemployment benefits are for individuals
+                    who are out of work through no fault of their own.If you have a separation from work that could be
+                    disqualifying, you may want to consider the impact as you decide when to file.
+                  </li>
+                </ul>
+                <div class="card-footer fs-sm">
+                  <em>
+                    For more information, you can review our
+                    <a href="https://cdle.colorado.gov/ui/claimants/resources/faqs" target="_blank"
+                      >Frequently Asked Questions</a
+                    >
+                    for claimants.
+                  </em>
+                </div>
+              </div>
+              <div class="alert alert-warning d-flex mt-3 mb-0 py-2" role="note">
+                <i class="bi bi-exclamation-circle-fill flex-shrink-0 me-2" aria-hidden="true"></i>
+                <div class="mt-05 fs-sm fw-semibold">
+                  You are not entitled to benefits for any weeks prior to the effective date of your claim.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CTA -->
+        <div class="border-top">
+          <div class="row p-3 p-md-5 gx-4">
+            <div class="col-lg-12">
+              <h2>The Benefit Amounts Are Locked In</h2>
+            </div>
+            <div class="col-lg-6">
+              <p>
+                The benefit amounts are locked in by the date that you file your claim and will not change, unless wages
+                reported by the employer are missing or incorrect.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <a
+                href="https://cdle.colorado.gov/ui/claimants/start-a-claim"
+                target="_blank"
+                class="shadow-sm btn btn-primary btn-lg"
+                role="button"
+                >File a Claim <i class="bi bi-box-arrow-up-right flex-shrink-0 ms-2" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -517,6 +712,21 @@
       // Footer: keep copyright year current
       const yearEl = document.getElementById("copyright-year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+    <script>
+      // Demo: reveal the estimated benefits section on a valid submit
+      const estimateForm = document.querySelector("form.needs-validation");
+      const benefitsSection = document.getElementById("calculated-benefits");
+      if (estimateForm && benefitsSection) {
+        estimateForm.addEventListener("submit", (event) => {
+          event.preventDefault(); // no backend — keep the page in place
+          if (estimateForm.checkValidity()) {
+            benefitsSection.classList.remove("d-none");
+            benefitsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+            benefitsSection.focus({ preventScroll: true });
+          }
+        });
+      }
     </script>
   </body>
 </html>
